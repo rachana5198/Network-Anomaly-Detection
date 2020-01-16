@@ -1,2 +1,2 @@
 # Network Anomaly Detection
-In this project anomalies in computer network are detected based on the patterns in the data using K-Nearest Neighbors algorithm and data are clustered into similar attack type using k-means algorithm.
+In this repo, anomalies in computer network are detected based on the patterns in the data using K-Nearest Neighbours algorithm and data are clustered into similar attack type using k-means algorithm.
