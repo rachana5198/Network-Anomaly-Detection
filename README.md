@@ -50,7 +50,7 @@ Attacks fall into four main categories:
 
 The datasets contain a total of 24 training attack types(back dos, buffer_overflow u2r, ftp_write r2l, guess_passwd r2l, imap r2l, ipsweep probe, land dos, loadmodule u2r, multihop, r2l, neptune dos, nmap probe, perl u2r, phf r2l, pod dos, portsweep probe, rootkit u2r, satan, probe, smurf dos, spy r2l, teardrop dos, warezclient r2l, warezmaster r2l), with an additional 14 types in the test data only.
 
-### Feature Name(Type) - Description
+#### Feature Name(Type) - Description
 
 #### Features of individual TCP connections
 1. Duration(continuous) - length (number of seconds) of the connection
@@ -90,3 +90,7 @@ The datasets contain a total of 24 training attack types(back dos, buffer_overfl
 7. srv_serror_rate(continuous) - % of connections that have "SYN" errors
 8. srv_rerror_rate(continuous) - % of connections that have "REJ" errors
 9. srv_diff_host_rate(continuous) - % of connections to different hosts
+
+### SAMPLE
+
+Let's try to create a machine learning algorithm that differentiates bad connections and good connections.
