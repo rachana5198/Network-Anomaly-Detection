@@ -2,6 +2,26 @@
 In this repo, anomalies in computer network are detected based on the patterns in the data using K-Nearest Neighbours algorithm and data are clustered into similar attack type using k-means algorithm.
 ## Understanding the dataset
 
+``TCPDUMP DATA:`` tcpdump is a command line utility that allows you to capture and analyze network traffic going through your system. Since it's a command line tool, it is ideal to run in remote servers or devices for which a GUI is not available, to collect data that can be analysed later. It can also be launched in the background or as a scheduled job using tools like cron. The tcpdump command line interface provides great flexibility for capturing and analysing network traffic.
+
+![](img/tcpdump.png)
+
+``So, what's next?``
+
+If you need a graphical tool to understand more complex flows, look at Wireshark. One benefit of Wireshark is that it can read .pcap files captured by tcpdump. You can use tcpdump to capture packets in a remote machine that does not have a GUI and analyse the result file with Wireshark, but that is a topic for another day.
+
+``ATTACKS``
+
+A connection is a sequence of TCP packets starting and ending at some well defined times, between which data flows to and from a source IP address to a target IP address under some well defined protocol.  Each connection is labeled as either normal, or as an attack, with exactly one specific attack type.  Each connection record consists of about 100 bytes.
+
+Attacks fall into four main categories:
+1. DOS: denial-of-service, e.g. syn flood;
+2. R2L: unauthorized access from a remote machine, e.g. guessing password;
+3. U2R:  unauthorized access to local superuser (root) privileges, e.g., various buffer overflow attacks.
+4. probing: surveillance and other probing, e.g., port scanning.
+
+The datasets contain a total of 24 training attack types(back dos, buffer_overflow u2r, ftp_write r2l, guess_passwd r2l, imap r2l, ipsweep probe, land dos, loadmodule u2r, multihop, r2l, neptune dos, nmap probe, perl u2r, phf r2l, pod dos, portsweep probe, rootkit u2r, satan, probe, smurf dos, spy r2l, teardrop dos, warezclient r2l, warezmaster r2l), with an additional 14 types in the test data only.
+
 ### Feature Name(Type) - Description
 
 #### Features of individual TCP connections
@@ -41,4 +61,4 @@ In this repo, anomalies in computer network are detected based on the patterns i
 6. srv_count(continuous) - number of connections to the same service as the current connection in the past two seconds
 7. srv_serror_rate(continuous) - % of connections that have "SYN" errors
 8. srv_rerror_rate(continuous) - % of connections that have "REJ" errors
-9. srv_diff_host_rate(continuous) - % of connections to different hosts 
+9. srv_diff_host_rate(continuous) - % of connections to different hosts
