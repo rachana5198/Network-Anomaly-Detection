@@ -6,6 +6,34 @@ In this repo, anomalies in computer network are detected based on the patterns i
 
 ![](img/tcpdump.png)
 
+``How to save tcpdump into a file?``
+```
+  rachana@rachanas-mbp ~ % sudo tcpdump -i any -c10 -nn -w webserver.pcap
+  Password:
+  tcpdump: data link type PKTAP
+  tcpdump: listening on any, link-type PKTAP (Apple DLT_PKTAP), capture size 262144 bytes
+  10 packets captured
+  12 packets received by filter
+  0 packets dropped by kernel
+```
+``How to read tcpdump data file?``
+
+```
+rachana@rachanas-mbp ~ % tcpdump -nn -r webserver.pcap
+reading from PCAP-NG file webserver.pcap
+10:44:25.657983 IP 9.193.67.105.51392 > 13.251.99.200.443: Flags [P.], seq 99479345:99479401, ack 2339379365, win 65535, options [nop,nop,TS val 1918118693 ecr 3935458439], length 56
+10:44:25.658148 IP 9.193.67.105.51393 > 13.251.99.200.443: Flags [P.], seq 1345599132:1345599188, ack 1609083055, win 65535, options [nop,nop,TS val 1918118693 ecr 3935458437], length 56
+10:44:25.658276 IP 9.193.67.105.51394 > 13.251.99.200.443: Flags [P.], seq 2003315023:2003315079, ack 179835943, win 65535, options [nop,nop,TS val 1918118693 ecr 3935458438], length 56
+10:44:25.668706 IP 13.251.99.200.443 > 9.193.67.105.51392: Flags [.], ack 56, win 17978, options [nop,nop,TS val 3935468403 ecr 1918118693], length 0
+10:44:25.668709 IP 13.251.99.200.443 > 9.193.67.105.51393: Flags [.], ack 56, win 15114, options [nop,nop,TS val 3935468403 ecr 1918118693], length 0
+10:44:25.669406 IP 13.251.99.200.443 > 9.193.67.105.51394: Flags [.], ack 56, win 15317, options [nop,nop,TS val 3935468404 ecr 1918118693], length 0
+10:44:25.708463 IP 13.251.99.200.443 > 9.193.67.105.51393: Flags [P.], seq 1:57, ack 56, win 15114, options [nop,nop,TS val 3935468443 ecr 1918118693], length 56
+10:44:25.708529 IP 9.193.67.105.51393 > 13.251.99.200.443: Flags [.], ack 57, win 65535, options [nop,nop,TS val 1918118741 ecr 3935468443], length 0
+10:44:25.709110 IP 13.251.99.200.443 > 9.193.67.105.51394: Flags [P.], seq 1:57, ack 56, win 15317, options [nop,nop,TS val 3935468444 ecr 1918118693], length 56
+10:44:25.709158 IP 9.193.67.105.51394 > 13.251.99.200.443: Flags [.], ack 57, win 65535, options [nop,nop,TS val 1918118741 ecr 3935468444], length 0
+
+```
+
 ``So, what's next?``
 
 If you need a graphical tool to understand more complex flows, look at Wireshark. One benefit of Wireshark is that it can read .pcap files captured by tcpdump. You can use tcpdump to capture packets in a remote machine that does not have a GUI and analyse the result file with Wireshark, but that is a topic for another day.
