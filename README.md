@@ -1,6 +1,14 @@
 # Network Anomaly Detection
-In this repo, anomalies in computer network are detected based on the patterns in the data using K-Nearest Neighbours algorithm and data are clustered into similar attack type using k-means algorithm.
-## Understanding the dataset
+
+In this challenge, use the dataset that has been provided and come up with an Machine Learning/Deep Learning algorithm that will differentiate good connections and bad connections. In the git repo, I have provided a sample notebook for reference which will perform the mentioned functionality.
+
+``Optional: Add additional functionalities like predicting the attacks and find the component responsible for the attack``
+
+#### HAPPY CODING!!!
+
+## Reference Material
+
+### Understanding the dataset
 
 ``TCPDUMP DATA:`` tcpdump is a command line utility that allows you to capture and analyze network traffic going through your system. Since it's a command line tool, it is ideal to run in remote servers or devices for which a GUI is not available, to collect data that can be analysed later. It can also be launched in the background or as a scheduled job using tools like cron. The tcpdump command line interface provides great flexibility for capturing and analysing network traffic.
 
